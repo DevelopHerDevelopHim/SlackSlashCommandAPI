@@ -1,13 +1,15 @@
 import webapp2
 import random
 
+
 class Home(webapp2.RequestHandler):
     """A GET Request Handler"""
 
     def get(self):
         """Receives a GET request"""
 
-        self.response.write('Hello, Viewers!')
+        self.response.write('Hello, DevelopHerDevelopHim!')
+
 
 class RockPaperScissors(webapp2.RequestHandler):
     """A POST Request Handler"""
@@ -15,7 +17,6 @@ class RockPaperScissors(webapp2.RequestHandler):
     def post(self):
         """Receives a POST request"""
 
-        print self.request
         move = self.request.get('text')
         self.request.get('response_url')
         play_rock_paper_scissors(move, self)
@@ -56,13 +57,38 @@ def play_rock_paper_scissors(move, self):
 
     # User put in an incorrect move
     else:
-        self.response.write(move + ' is not a valid move.')
+        self.response.write("{}is not a valid move.".format(move))
+
+
+###############################################################
+# An alterative way to handle logic that is more maintainable #
+    # game = {"rock": {
+    #                 1: "I chose Rock too. We Tie",
+    #                 2: "I chose Paper. You Lose",
+    #                 3: "I chose Scissors. You Win",
+    #                 },
+    #         "paper": {
+    #                 1: "I chose Paper too. We Tie",
+    #                 2: "I chose Scissors. You Lose",
+    #                 3: "I chose Rock. You Win",
+    #                 },
+    #         "scissors": {
+    #                 1: "I chose Scissors too. We Tie",
+    #                 2: "I chose Rock. You Lose",
+    #                 3: "I chose Paper. You Win",
+    #                 },
+    #         }
+    # if move not in game.keys():
+    #     self.response.write("{}is not a valid move.".format(move))
+
+    # self.response.write(game.get(move).get(num))
 
 
 app = webapp2.WSGIApplication([
                         (r'/', Home),
                         (r'/rockpaperscissors', RockPaperScissors)
-                        ], debug=True)
+                        ],
+                        debug=True)
 
 
 def main():
