@@ -8,7 +8,7 @@ class Home(webapp2.RequestHandler):
     def get(self):
         """Receives a GET request"""
 
-        self.response.write('Hello, DevelopHerDevelopHim!')
+        self.response.write('Hello, DevelopHerDevelopHim Viewers!')
 
 
 class RockPaperScissors(webapp2.RequestHandler):
@@ -62,7 +62,8 @@ def play_rock_paper_scissors(move, self):
 
 ###############################################################
 # An alterative way to handle logic that is more maintainable #
-    # game = {"rock": {
+    # game = {
+    #         "rock": {
     #                 1: "I chose Rock too. We Tie",
     #                 2: "I chose Paper. You Lose",
     #                 3: "I chose Scissors. You Win",
