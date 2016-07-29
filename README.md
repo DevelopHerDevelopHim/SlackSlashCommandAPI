@@ -22,7 +22,7 @@ Step-by-step guide provided by [DevelopHerDevelopHim](https://www.youtube.com/ch
 <img src="img/game.png">
 
 
-### About the Developer    
+### About the Developers    
 
 James Cha    
 [Linkedin](https://www.linkedin.com/in/jamesjcha)         
