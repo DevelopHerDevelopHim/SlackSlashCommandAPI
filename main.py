@@ -18,7 +18,6 @@ class RockPaperScissors(webapp2.RequestHandler):
         """Receives a POST request"""
 
         move = self.request.get('text')
-        self.request.get('response_url')
         play_rock_paper_scissors(move, self)
 
 
